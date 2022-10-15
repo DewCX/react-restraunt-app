@@ -1,5 +1,6 @@
 import React, { useEffect, useState} from 'react';
 import './App.css';
+import Recipe from './Recipe';
 
 const App = () =>{
   const APP_ID = "{e4f42e6d}";
@@ -8,6 +9,10 @@ const App = () =>{
   const exampleReq = {/* `URL` */}
 
   const[recipes, setRecipes] = useState([]);
+  
+
+
+
   useEffect(() => {
     getRecipes();
   }, [])
@@ -30,6 +35,14 @@ const App = () =>{
           Search
         </button>
       </form>
+      {recipes.map(recipe => (
+        <Recipe
+          key={recipe.recipe.label}
+          title={recipe.recipe.label}
+          calories={recipe.recipe.calories}
+          image={recipe.recipe.image}
+        />
+      ))}
     </div>
   );
 };
