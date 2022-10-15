@@ -3,13 +3,14 @@ import './App.css';
 import Recipe from './Recipe';
 
 const App = () =>{
-  const APP_ID = "{e4f42e6d}";
-  const APP_KEY = "{f8c601baf9b3e7a62e2cef8c0b5c87fb}"
+  const APP_ID = "e4f42e6d";
+  const APP_KEY = "f8c601baf9b3e7a62e2cef8c0b5c87fb";
 
   const exampleReq = {/* `URL` */}
 
   const[recipes, setRecipes] = useState([]);
-  
+  const[search,setSearch] = useState("");
+  const[query, setQuery] = useState("chicken");
 
 
 
@@ -26,11 +27,21 @@ const App = () =>{
     console.log(data.hits);
   };
 
+  const updateSearch = e => {
+    setSearch(e.target.value);
+  }
+
+  const getSearch = e => {
+    e.preventdefault();
+    setQuery(search);
+  }
+
 
   return (
     <div className='App'>
-      <form className='search-form'>
-        <input className='search-bar type="text'/>
+      <h1>Search Bar</h1>
+      <form onSubmit={getSearch} className='search-form'>
+        <input className='search-bar' type='text' value={search} onChange={updateSearch}/>
         <button className='search-button' type='submit'>
           Search
         </button>
