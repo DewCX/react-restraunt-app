@@ -1,27 +1,7 @@
 .App {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  min-height: 80vh;
 }
 
-.search-form{
-  padding: 30px;
-  border: 2px solid #61dafb;
-  border-radius: 7px;
-}
 
-.search-bar{
-  padding: 6px;
-  border: 2px solid greenyellow;
-  border-radius: 10px;
-  margin-right: 2px;
-}
 
-.search-button{
-  padding: 6px;
-  background: transparent;
-  border-radius: 10px;
-}
+
+
